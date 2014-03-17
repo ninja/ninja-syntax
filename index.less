@@ -1,0 +1,81 @@
+.editor {
+  background-color: black;
+  color: fade(white, 90%);
+  .gutter {
+    background-color: fade(white, 5%);
+    .line-numbers {
+      color: fade(white, 20%);
+      .cursor-line {
+        background-color: fade(white, 10%);
+        color: fade(white, 50%);
+      }
+    }
+  }
+  .cursor {
+    border-left-width: 2px;
+    color: red;
+  }
+  .lines {
+    .cursor-line {
+      background: fade(white, 10%);
+    }
+    .source {
+      .constant.language.boolean.false {
+        color: lighten(red, 20%);
+      }
+      .constant.language.boolean.true {
+        color: lighten(green, 50%);
+      }
+      .entity.name.function {
+      }
+      .entity.name.type.instance {
+        color: goldenrod;
+      }
+      .indent-guide {
+        color: fade(white, 15%);
+      }
+      .keyword.control {
+        color: orange;
+      }
+      .keyword.operator.new {
+        color: orange;
+      }
+      .meta.brace.curly {
+        color: cyan;
+      }
+      .meta.brace.round {
+        color: cyan;
+      }
+      .meta.delimiter.method.period {
+        color: cyan;
+      }
+      .meta.delimiter.object.comma {
+        color: cyan;
+      }
+      .operator {
+        color: cyan;
+      }
+      .punctuation.definition.parameters.begin {
+        color: orange;
+      }
+      .punctuation.definition.parameters.end {
+        color: orange;
+      }
+      .punctuation.terminator.statement {
+        color: orange;
+      }
+      .string.quoted.single {
+        color: fade(white, 60%);
+      }
+      .storage.modifier {
+        color: orange;
+      }
+      .storage.type.function {
+        color: orange;
+      }
+      .variable.language {
+        color: goldenrod;
+      }
+    }
+  }
+}
