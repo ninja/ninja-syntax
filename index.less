@@ -1,81 +1,115 @@
+@content-foreground: fade(white, 60%);
+@content-background: fade(white, 5%);
+@content-middleground: fade(white, 30%);
+@editor-background: black;
+@editor-foreground: darken(white, 20%);
+@edit-foreground: cyan;
+@edit-background: fade(cyan, 10%);
+@punctuation: desaturate(cyan, 50%);
+@reserved: desaturate(orange, 40%);
+@positive: fade(lighten(green, 50%), 60%);
+@negative: fade(lighten(red, 20%), 60%);
+@variable: desaturate(lighten(purple, 20%), 70%);
+
 .editor {
-  background-color: black;
-  color: fade(white, 90%);
-  .gutter {
-    background-color: fade(white, 5%);
-    .line-numbers {
-      color: fade(white, 20%);
-      .cursor-line {
-        background-color: fade(white, 10%);
-        color: fade(white, 50%);
-      }
-    }
+  background-color: @editor-background;
+  color: @editor-foreground;
+  .bracket-matcher {
+    background-color: @content-background;
+    border: none !important;
   }
   .cursor {
-    border-left-width: 2px;
-    color: red;
+    color: @edit-foreground;
+  }
+  .gutter {
+    .line-numbers {
+      color: @content-middleground;
+      .cursor-line {
+        background-color: @content-background;
+        color: @punctuation;
+      }
+    }
   }
   .lines {
     .cursor-line {
-      background: fade(white, 10%);
+      background-color: @content-background;
     }
-    .source {
-      .constant.language.boolean.false {
-        color: lighten(red, 20%);
+    .indent-guide {
+      color: @content-background;
+    }
+    .css {
+      color: @punctuation;
+      .property-name {
+        color: @editor-foreground;
       }
-      .constant.language.boolean.true {
-        color: lighten(green, 50%);
-      }
-      .entity.name.function {
-      }
-      .entity.name.type.instance {
-        color: goldenrod;
-      }
-      .indent-guide {
-        color: fade(white, 15%);
-      }
-      .keyword.control {
-        color: orange;
-      }
-      .keyword.operator.new {
-        color: orange;
-      }
-      .meta.brace.curly {
-        color: cyan;
-      }
-      .meta.brace.round {
-        color: cyan;
-      }
-      .meta.delimiter.method.period {
-        color: cyan;
-      }
-      .meta.delimiter.object.comma {
-        color: cyan;
-      }
-      .operator {
-        color: cyan;
-      }
-      .punctuation.definition.parameters.begin {
-        color: orange;
-      }
-      .punctuation.definition.parameters.end {
-        color: orange;
-      }
-      .punctuation.terminator.statement {
-        color: orange;
-      }
-      .string.quoted.single {
-        color: fade(white, 60%);
-      }
-      .storage.modifier {
-        color: orange;
-      }
-      .storage.type.function {
-        color: orange;
-      }
-      .variable.language {
-        color: goldenrod;
+      .support {
+        color: @editor-foreground;
       }
     }
+    .comment {
+      color: @content-middleground;
+    }
+    .constant {
+      color: @reserved;
+      &.dom {
+        color: @editor-foreground;
+      }
+      &.false {
+        color: @negative;
+      }
+      &.numeric {
+        color: @variable;
+      }
+      &.true {
+        color: @positive;
+      }
+    }
+    .entity {
+      color: @reserved;
+    }
+    .keyword {
+      color: @reserved;
+    }
+    .meta {
+      color: @punctuation;
+      &.html {
+        color: @variable;
+        &.tag {
+          color: @punctuation;
+        }
+      }
+    }
+    .operator {
+      color: @punctuation;
+    }
+    .parameter.function {
+      color: @editor-foreground;
+    }
+    .punctuation {
+      color: @punctuation;
+    }
+    .string {
+      color: @variable;
+      .punctuation {
+        color: @punctuation;
+      }
+    }
+    .storage {
+      color: @reserved;
+    }
+    .variable {
+      color: @variable;
+    }
+    .trailing-whitespace {
+      background-color: @content-background;
+    }
+  }
+  .selection {
+    .region {
+      background-color: @edit-background;
+    }
+  }
+  .wrap-guide {
+    background-color: @content-background;
   }
 }

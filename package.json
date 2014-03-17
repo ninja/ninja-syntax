@@ -1,11 +1,11 @@
 {
   "name": "ninja-syntax",
   "theme": "syntax",
-  "version": "0.0.0",
-  "description": "A short description of your syntax theme",
+  "version": "0.0.1",
+  "description": "Ninja syntax theme for Atom",
   "repository": "https://github.com/atom/ninja-syntax",
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": "^0.x.x"
   }
 }
