@@ -1,7 +1,7 @@
 {
   "name": "ninja-syntax",
   "theme": "syntax",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Ninja syntax theme for Atom",
   "repository": "https://github.com/ninja/ninja-syntax",
   "license": "MIT",
