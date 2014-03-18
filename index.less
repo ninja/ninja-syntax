@@ -7,8 +7,6 @@
 @edit-background: fade(cyan, 10%);
 @punctuation: desaturate(cyan, 50%);
 @reserved: desaturate(orange, 40%);
-@positive: fade(lighten(green, 50%), 60%);
-@negative: fade(lighten(red, 20%), 60%);
 @variable: desaturate(lighten(purple, 20%), 70%);
 
 .editor {
@@ -37,6 +35,9 @@
     .indent-guide {
       color: @content-background;
     }
+    .class {
+      color: @reserved;
+    }
     .css {
       color: @punctuation;
       .property-name {
@@ -50,25 +51,22 @@
       color: @content-middleground;
     }
     .constant {
-      color: @reserved;
-      &.dom {
-        color: @editor-foreground;
-      }
-      &.false {
-        color: @negative;
-      }
-      &.numeric {
-        color: @variable;
-      }
-      &.true {
-        color: @positive;
-      }
+      color: @variable;
     }
     .entity {
       color: @reserved;
+      &.name {
+        color: @editor-foreground;
+      }
+    }
+    .function.name {
+      color: @editor-foreground;
     }
     .keyword {
       color: @reserved;
+      &.operator {
+        color: @reserved;
+      }
     }
     .meta {
       color: @punctuation;
@@ -96,6 +94,9 @@
     }
     .storage {
       color: @reserved;
+    }
+    .support {
+      color: @editor-foreground;
     }
     .variable {
       color: @variable;
