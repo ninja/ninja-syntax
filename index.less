@@ -4,7 +4,7 @@
 @editor-background: black;
 @editor-foreground: darken(white, 20%);
 @edit-foreground: cyan;
-@edit-background: fade(cyan, 10%);
+@edit-background: fade(cyan, 20%);
 @punctuation: desaturate(cyan, 50%);
 @reserved: desaturate(orange, 40%);
 @variable: desaturate(lighten(purple, 20%), 70%);
@@ -13,8 +13,10 @@
   background-color: @editor-background;
   color: @editor-foreground;
   .bracket-matcher {
-    background-color: @content-background;
-    border: none !important;
+    background-color: fade(cyan, 20%);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 0 8px fade(cyan, 40%);
   }
   .cursor {
     color: @edit-foreground;
@@ -25,16 +27,11 @@
       .cursor-line {
         background-color: @content-background;
         color: @punctuation;
+        text-shadow: 0 0 8px fade(cyan, 80%);
       }
     }
   }
   .lines {
-    .cursor-line {
-      background-color: @content-background;
-    }
-    .indent-guide {
-      color: @content-background;
-    }
     .class {
       color: @reserved;
     }
@@ -53,6 +50,9 @@
     .constant {
       color: @variable;
     }
+    .cursor-line {
+      background-color: @content-background;
+    }
     .entity {
       color: @reserved;
       &.name {
@@ -61,6 +61,12 @@
     }
     .function.name {
       color: @editor-foreground;
+    }
+    .indent-guide {
+      color: @content-background;
+    }
+    .invisible-character {
+      color: @content-middleground;
     }
     .keyword {
       color: @reserved;
