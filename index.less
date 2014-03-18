@@ -35,15 +35,6 @@
     .class {
       color: @reserved;
     }
-    .css {
-      color: @punctuation;
-      .property-name {
-        color: @editor-foreground;
-      }
-      .support {
-        color: @editor-foreground;
-      }
-    }
     .comment {
       color: @content-middleground;
     }
@@ -76,12 +67,6 @@
     }
     .meta {
       color: @punctuation;
-      &.html {
-        color: @variable;
-        &.tag {
-          color: @punctuation;
-        }
-      }
     }
     .operator {
       color: @punctuation;
@@ -109,6 +94,25 @@
     }
     .trailing-whitespace {
       background-color: @content-background;
+    }
+    .css {
+      .class {
+        color: @editor-foreground;
+      }
+      .support, .tag {
+        color: @reserved;
+      }
+    }
+    .html {
+      .tag {
+        color: @reserved;
+        &.punctuation {
+          color: @punctuation;
+        }
+        .punctuation {
+          color: @punctuation;
+        }
+      }
     }
   }
   .selection {

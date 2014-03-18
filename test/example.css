@@ -1,0 +1,9 @@
+body {
+  color: #000000;
+  font-family: 'Helvetica', sans-serif;
+}
+
+div.example {
+  background-color: white;
+  margin: 0 auto;
+}

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="example.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <h1 class="example">Hello</h1>
+    <script>
+      window.Example = function () {
+        var
+          element = document.querySelector('.example');
+
+        this.element = element;
+
+        this.title = element.textContent;
+      };
+    </script>
+    <script src="example.js"></script>
+  </body>
+</html>
